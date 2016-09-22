@@ -1,0 +1,6 @@
+{% for id, story in story_dict.iteritems() %}
+  <h2><a href="{{ story.url }}">{{ story.title }}</a></h2>
+  <h3>By {{ story.byline }}</h3>
+  <p>{{ story.teaser }}</p>
+  <br>
+{% endfor %}

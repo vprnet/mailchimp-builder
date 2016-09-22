@@ -1,0 +1,57 @@
+html {
+    font: 12pt helvetica;
+    width: 900px;
+}
+
+p {
+    font-size: 12pt;
+}
+
+img {
+    float: left;
+    padding: 5px 10px 0 0;
+}
+
+#npr_feed {
+    width: 430px;
+    float: left;
+    padding: 0 10px;
+}
+
+#vpr_feed {
+    width: 420px;
+    float: right;
+}
+
+.dateline {
+    font-size: 8pt;
+}
+
+.api_id {
+    font-weight: bold;
+}
+
+div.form_fields {
+    float: right;
+}
+
+p.api_id_line {
+    float: left;
+    width: 200px;
+}
+
+div.story {
+    padding: 0 5px 50px;
+    background: #eee;
+}
+
+input.text_field {
+    margin-top: 15px;
+    width: 30px;
+}
+
+#submit {
+    margin: 30px 185px;
+    font-size: 18px;
+
+}

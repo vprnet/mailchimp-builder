@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Story ID Finder</title>
+    <meta name="description" content="This page pulls stories from the NPR API,
+        providing the title, byline, date, a teaser, and an image as well as
+        the all important tag ID.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+
+</head>
+
+<body>
+    <form action="{{ url_for('id_list') }}" method=get class=id_form>
+    <div id="npr_feed">
+        <h2>NPR Feed</h2>
+        {% for id, story in npr_dict.iteritems() %}
+            <div class="story">
+                <h3><a href="{{ story.url }}">{{ story.title }}</a></h3>
+                <img src="{{ story.image }}" width=100px alt="{{ story.title }}">
+                <p>{{ story.teaser }}</p>
+                <p class="dateline">By {{ story.byline }} on {{ story.date }}</p>
+                <div class="id_and_form">
+                    <p class="api_id_line">NPR API ID: <span class="api_id">{{ id }}</span></p>
+                    <div class="form_fields">
+                        <input type=hidden name=api_id value="{{ id }}">
+                        Rank:
+                        <input type=text maxlength=1 name=rank class="text_field">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="vpr_feed">
+        <h2>VPR Feed</h2>
+        {% for id, story in vpr_dict.iteritems() %}
+            <div class="story">
+                <h3><a href="{{ story.url }}">{{ story.title }}</a></h3>
+                <img src="{{ story.image }}" width=100px alt="{{ story.title }}">
+                <p>{{ story.teaser }}</p>
+                <p class="dateline">By {{ story.byline }} on {{ story.date }}</p>
+                <div class="id_and_form">
+                    <p class="api_id_line">NPR API ID: <span class="api_id">{{ id }}</span></p>
+                    <div class="form_fields">
+                        <input type=hidden name=api_id value="{{ id }}">
+                        Rank:
+                        <input type=text maxlength=1 name=rank class="text_field">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <h2>Vermont Edition</h2>
+        {% for id, story in vt_ed_dict.iteritems() %}
+            <div class="story">
+                <h3><a href="{{ story.url }}">{{ story.title }}</a></h3>
+                <img src="{{ story.image }}" width=100px alt="{{ story.title }}">
+                <p>{{ story.teaser }}</p>
+                <p class="dateline">By {{ story.byline }} on {{ story.date }}</p>
+                <div class="id_and_form">
+                    <p class="api_id_line">NPR API ID: <span class="api_id">{{ id }}</span></p>
+                    <div class="form_fields">
+                        <input type=hidden name=api_id value="{{ id }}">
+                        Rank:
+                        <input type=text maxlength=1 name=rank class="text_field">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <h2>Commentaries</h2>
+        {% for id, story in commentary_dict.iteritems() %}
+            <div class="story">
+                <h3><a href="{{ story.url }}">{{ story.title }}</a></h3>
+                <img src="{{ story.image }}" width=100px alt="{{ story.title }}">
+                <p>{{ story.teaser }}</p>
+                <p class="dateline">By {{ story.byline }} on {{ story.date }}</p>
+                <div class="id_and_form">
+                    <p class="api_id_line">NPR API ID: <span class="api_id">{{ id }}</span></p>
+                    <div class="form_fields">
+                        <input type=hidden name=api_id value="{{ id }}">
+                        Rank:
+                        <input type=text maxlength=1 name=rank class="text_field">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <input type="submit" id="submit">
+    </form>
+</body>
+</html>
