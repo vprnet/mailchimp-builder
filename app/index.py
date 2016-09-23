@@ -6,14 +6,6 @@ from flask_frozen import Freezer
 from upload_s3 import set_metadata
 from config import AWS_DIRECTORY
 
-
-#configuration
-DATABASE = '/tmp/flaskr.db'
-DEBUG = True  # TURN OFF FOR PRODUCTION
-USERNAME = 'admin'
-PASSWORD = 'default'
-
-
 app = Flask(__name__)
 app.config.from_object('config')
 
